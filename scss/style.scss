@@ -1,0 +1,55 @@
+@import "_nullstyle.scss";
+
+body {
+}
+
+.wrapper {
+   padding: 0px 10px 0px 10px;
+   max-width: 1300px;
+   margin: 0 auto;
+}
+.main {
+   background: center/cover no-repeat url("../img/main.jpg");
+   height: 900px;
+}
+.header {
+   &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__bottom {
+   }
+}
+.top {
+   &__logo {
+   }
+
+   &__middle {
+   }
+
+   &__search {
+   }
+}
+.middle {
+   &__mail {
+   }
+
+   &__phone {
+   }
+}
+.bottom {
+   &__nav {
+   }
+}
+.nav {
+   &__links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__link {
+   }
+}
