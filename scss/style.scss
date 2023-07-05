@@ -85,12 +85,26 @@ body {
 }
 .header {
    &__top {
+      position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 25px 0px 25px 0px;
+      &::after {
+         content: "";
+         width: 100%;
+         position: absolute;
+         top: 75px;
+         left: 50%;
+         right: 0;
+         height: 1px;
+         transform: translateX(-50%);
+         border-top: 1px solid #fff;
+      }
    }
 
    &__bottom {
+      padding-top: 30px;
    }
 }
 .top {

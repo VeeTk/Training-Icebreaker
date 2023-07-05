@@ -127,10 +127,27 @@ body a {
 }
 
 .header__top {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 25px 0px 25px 0px;
 }
+.header__top::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  right: 0;
+  height: 1px;
+  transform: translateX(-50%);
+  border-top: 1px solid #fff;
+}
+.header__bottom {
+  padding-top: 30px;
+}
+
 .nav__links {
   display: flex;
   align-items: center;
