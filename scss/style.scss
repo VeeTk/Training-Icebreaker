@@ -65,12 +65,50 @@
    font-display: swap;
 }
 
+//============Переменные шаблоны миксины===============
+:root {
+   --color-font: #fff;
+   --color-font-2: #333;
+   --color-font-2: #133d8d;
+   --color-bg: #fff;
+   --color-bg-elems: #133d8d;
+}
+
+%font-36-400 {
+   font-size: 36px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 140%;
+   letter-spacing: 1.8px;
+}
+%font-16-700 {
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 140%;
+   letter-spacing: 0.8px;
+}
+%font-14-400 {
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 140%;
+}
+
+@mixin font-parameters($fz, $fs, $fw, $lh) {
+   font-size: $fz;
+   font-style: $fs;
+   font-weight: $fw;
+   line-height: $lh;
+}
+
+//==================================================
+
 body {
    font-family: "HelveticaNeueCyr";
-   font-weight: normal;
-   color: white;
+   color: var(--color-font);
    a {
-      color: white;
+      color: var(--color-font);
    }
 }
 
@@ -79,10 +117,12 @@ body {
    max-width: 1300px;
    margin: 0 auto;
 }
-.main {
+.container {
    background: center/cover no-repeat url("../img/main.jpg");
    height: 900px;
 }
+
+//=====================header=====================================
 .header {
    &__top {
       position: relative;
@@ -112,16 +152,21 @@ body {
    }
 
    &__middle {
+      display: flex;
    }
 
    &__search {
    }
 }
 .middle {
+   @include font-parameters(90px, normal, normal, 140%);
    &__mail {
+      color: var(--color-font);
    }
 
    &__phone {
+      margin: 0px 0px 0px 50px;
+      color: var(--color-font);
    }
 }
 .bottom {
@@ -133,8 +178,123 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      color: var(--color-font);
    }
 
    &__link {
+      @include font-parameters(14px, normal, normal, 140%);
+      letter-spacing: 0.7px;
+   }
+}
+//===================main=========================================
+.main {
+   display: flex;
+   justify-content: space-between;
+   margin: 120px 0px 0px 0px;
+   gap: 20px;
+   &__left {
+   }
+
+   &__title {
+      @include font-parameters(60px, normal, 300, 140%);
+      max-width: 636px;
+      color: var(--color-font);
+   }
+
+   &__button {
+      @include font-parameters(16px, normal, normal, 140%);
+      letter-spacing: 0.7px;
+      margin: 50px 0px 0px 0px;
+      background: #bd0007;
+      width: 170px;
+      height: 51px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 15px 30px 15px 30px;
+      cursor: pointer;
+      color: var(--color-font);
+   }
+
+   &__btns {
+      display: flex;
+      margin: 130px 0px 0px 0px;
+      gap: 10px;
+   }
+
+   &__right {
+      margin: 310px 0px 0px 0px;
+   }
+
+   &__card {
+      background: rgba(51, 51, 51, 0.3);
+      padding: 30px 35px 35px 35px;
+      width: 526px;
+   }
+   &__subtitle {
+      position: relative;
+      @include font-parameters(14px, normal, normal, 140%);
+      margin: 30px 0px 0px 0px;
+      padding: 0px 0px 0px 32px;
+      max-width: 400px;
+      color: var(--color-font);
+      &::before {
+         content: "";
+         height: 100%;
+         position: absolute;
+         top: 0px;
+         left: -50px;
+         width: 50px;
+         transform: translateX(-50%);
+         transform: rotate(0.25turn);
+         border-top: 2px solid #fff;
+      }
+   }
+}
+
+.button {
+   &__link {
+   }
+}
+.btns {
+   &__left {
+      width: 60px;
+      height: 60px;
+      padding: 15px 15px 15px 15px;
+      background: var(--blue, #133d8d);
+      cursor: pointer;
+   }
+
+   &__right {
+      width: 60px;
+      height: 60px;
+      padding: 15px 15px 15px 15px;
+      background: var(--blue, #133d8d);
+      cursor: pointer;
+   }
+}
+.card {
+   &__content {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__title {
+      @include font-parameters(14px, normal, normal, 140%);
+      letter-spacing: 0.7px;
+      color: var(--color-font);
+   }
+
+   &__parameters {
+      @include font-parameters(14px, normal, 300, 140%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 25px 0px 0px 0px;
+      color: var(--color-font);
+   }
+
+   &__ship {
+      display: flex;
    }
 }
