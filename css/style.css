@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   --color-font: #fff;
   --color-font-2: #333;
-  --color-font-2: #133d8d;
+  --color-font-3: #133d8d;
   --color-bg: #fff;
   --color-bg-elems: #133d8d;
 }
@@ -257,14 +257,14 @@ body a {
   width: 60px;
   height: 60px;
   padding: 15px 15px 15px 15px;
-  background: var(--blue, #133d8d);
+  background: var(--color-bg-elems, #133d8d);
   cursor: pointer;
 }
 .btns__right {
   width: 60px;
   height: 60px;
   padding: 15px 15px 15px 15px;
-  background: var(--blue, #133d8d);
+  background: var(--color-bg-elems, #133d8d);
   cursor: pointer;
 }
 
@@ -307,10 +307,11 @@ body a {
   display: flex;
   gap: 24px;
   margin: 100px 0px 0px 0px;
+  color: var(--color-font, #fff);
 }
 
 .top__left {
-  color: #333;
+  color: var(--color-font-2, #333);
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -318,7 +319,7 @@ body a {
   letter-spacing: 1.8px;
 }
 .top__right a {
-  color: #133d8d;
+  color: var(--color-font-3, #133d8d);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -388,4 +389,48 @@ body a {
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
+}
+
+.history {
+  height: 798px;
+  background: var(--color-bg-elems, #133d8d);
+  color: var(--color-font, #fff);
+  padding: 120px 0px 45px 0px;
+}
+.history__container {
+  display: flex;
+  justify-content: space-between;
+}
+.history__title {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 1.8px;
+}
+.history__text {
+  max-width: 526px;
+  margin: 40px 0px 0px 0px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+.history__right {
+  margin: 90px 0px 0px 0px;
+}
+.history__points {
+  margin: 15px 0px 0px 0px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.points__point {
+  display: flex;
+}
+
+.point__text {
+  margin: 0px 0px 0px 20px;
 }
